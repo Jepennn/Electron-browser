@@ -5,9 +5,9 @@ import path from "path";
 let mainWindow: BrowserWindow;
 
 app.on("ready", () => {
+  mainWindow = new BrowserWindow({});
   if (isDev()) {
-    mainWindow = new BrowserWindow({});
-    mainWindow.loadURL("http://www.google.com");
+    mainWindow.loadURL("http://localhost:5123");
   } else {
     mainWindow.loadFile(path.join(app.getAppPath(), "/dist-react/index.html"));
   }
